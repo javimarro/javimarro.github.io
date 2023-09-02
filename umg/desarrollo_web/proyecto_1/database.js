@@ -68,7 +68,7 @@ function MapProducts(rows, len, callback){
 }
 
 function GetProductList(callback){
-    if(!webSQLEnabled)
+    if(webSQLEnabled)
     {
         dbObj.transaction(function(t){
             t.executeSql('CREATE TABLE IF NOT EXISTS Products (Id unique, Name, Price, Image)');
